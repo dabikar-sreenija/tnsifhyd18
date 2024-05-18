@@ -1,20 +1,20 @@
-package multithreading;
+package exception;
 
-public class D extends Thread {
-public void run() {
-	for(int i=1;i<=5;i++) {
+public class D {
+	public static void main(String[] args) {
 		try {
-	Thread.sleep(500);
+			String s = null;
+System.out.println(s.length());
 		}
-		catch(InterruptedException e) {
-			System.out.println(e);
+		catch(ArithmeticException e) {
+		System.out.println("null");
 		}
-	
-	System.out.println(i);
+catch(ArrayIndexOutOfBoundsException e) {
+	System.out.println("null1");
+}
+		catch(Exception e) {
+			System.out.println("null2");
+		}
+		System.out.println("code.");
 	}
-}
-public static void main(String[] args) {
-	D t1=new D();
-	t1.start();
-}
 }

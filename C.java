@@ -1,16 +1,20 @@
-package multithreading;
+package exception;
 
-public class C extends Thread{
-	public void run() {
-		System.out.println("running thread name is:"+Thread.currentThread().getName());
-		System.out.println("running thread priority is:"+Thread.currentThread().getPriority());
+public class C {
+
+	public static void main(String[] args) {
+		try {
+			int a[]=new int[5];
+			System.out.println(a[10]);
+		}
+		catch(ArithmeticException e){
+			System.out.println("arithmetic");
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+System.out.println("out of index");
 	}
-public static void main(String[] args) {
-	C m1=new C();
-	C m2=new C();
-	m1.setPriority(Thread.MIN_PRIORITY);
-	m2.setPriority(Thread.MAX_PRIORITY);
-	m1.start();
-	m2.start();
+catch(Exception e) {
+	System.out.println("parent exception");
 }
-}
+		System.out.println("code....");
+}}

@@ -1,13 +1,21 @@
-package multithreading;
+package exception;
 
-public class B implements Runnable{
+public class B {
 
-	@Override
-	public void run() {
-		for(int i=0;i<10;i++) {
-		System.out.println("Thread"+Thread.currentThread().getId()+"is running");
-	}
-	}
-
+	public static void main(String[] args) {
+		try {
+			int a[]=new int[5];
+			a[5]=30/0;
+		}
+catch(ArithmeticException e) {
+	System.out.println(e);
 }
- 
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println(e);
+		}
+		catch(Exception e) {
+			System.out.println("parent exception occurs");
+		}
+		System.out.println("rest of the code....");
+	}
+}
