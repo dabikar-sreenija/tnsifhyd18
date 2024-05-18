@@ -1,13 +1,15 @@
-package exception;
-
+package collections;
+import java.io.*;
+import java.util.*;
 public class A {
 public static void main(String[] args) {
-	try {
-		int data=100/0;
-	}
-	catch(ArithmeticException e) {
-		System.out.println(e);
-	}
-	System.out.println("rest of the code...");
+	ArrayList<Integer>al=new ArrayList<Integer>();
+	for(int i=1;i<=5;i++)
+		al.add(i);
+		System.out.println(al);
+	al.remove(3);
+	System.out.println(al);
+	for(int i=0;i<al.size();i++)
+		System.out.println(al.get(i)+"");
 }
 }
